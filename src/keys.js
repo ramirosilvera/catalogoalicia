@@ -1,7 +1,7 @@
 module.exports = {
 
     database: {
-        URI: 'mongodb://localhost/imgshare2' //inicializar mongod en la consola
+        URI: 'mongodb+srv://ramiro:roman0010@cluster0.ecrin.mongodb.net/test?retryWrites=true&w=majority' //inicializar mongod en la consola
     }
 
 };

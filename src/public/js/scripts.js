@@ -31,7 +31,7 @@
         .done(function(result) {
             $this.removeClass('btn-danger').addClass('btn-success');
             $this.find('i').removeClass('fa-times').addClass('fa-check');
-            $this.append('<span>d</span>');
+            $this.append('<span>ok</span>');
         });
     }
   });
