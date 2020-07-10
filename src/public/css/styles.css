@@ -5,3 +5,7 @@ body {
 .encabezado {
     font-weight: bold;
 }
+
+.saludo {
+    color: #ffffff;
+}
