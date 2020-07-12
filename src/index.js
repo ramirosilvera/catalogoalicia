@@ -3,13 +3,11 @@ const express = require('express');
 const config = require('./server/config');
 
 
-//DATABASE
-require('./database');
-
-const app = config(express());
-
 // Initiliazations
+const app = config(express());
+require('./database');
 require('./config/passport');
+
 
 //STARTING THE SERVER
 app.listen(app.get('port'), () => {

@@ -5,9 +5,12 @@ const { isAuthenticated } = require('../helpers/auth');
 // Controllers
 const home = require('../controllers/home');
 const image = require('../controllers/image');
+const users = require('../controllers/users');
 
 module.exports = app => {
 
+  router.get('/users/signin', users.signin);
+  router.get('/users/signup', users.signup);
   router.get('/', isAuthenticated, home.index);
   router.get('/images/:image_id', isAuthenticated, image.index);
   router.post('/images', isAuthenticated, image.create);

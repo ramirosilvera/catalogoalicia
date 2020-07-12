@@ -1,19 +1,19 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-const User = require('../models/User'); 
+const User = require('../models/User');
 
 passport.use(new LocalStrategy({
   usernameField: 'email'
 }, async (email, password, done) => {
   // Match Email's User
-  const user = await User.findOne({email: email});
+  const user = await User.findOne({ email: email });
   if (!user) {
     return done(null, false, { message: 'No existe el usuario.' });
   } else {
     // Match Password's User
     const match = await user.matchPassword(password);
-    if(match) {
+    if (match) {
       return done(null, user);
     } else {
       return done(null, false, { message: 'Contraseña incorrecta.' });
@@ -21,7 +21,7 @@ passport.use(new LocalStrategy({
   }
 }));
 
-passport.serializeUser((user, done) => {
+passport.serializeUser(async (user, done) => {
   done(null, user.id);
 });
 
@@ -30,3 +30,4 @@ passport.deserializeUser((id, done) => {
     done(err, user);
   });
 });
+

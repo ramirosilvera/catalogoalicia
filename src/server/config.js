@@ -38,9 +38,9 @@ module.exports = app => {
         resave: true,
         saveUninitialized: true
     }));
+    app.use(flash());
     app.use(passport.initialize());
     app.use(passport.session());
-    app.use(flash());
 
     // Global Variables
     app.use((req, res, next) => {
