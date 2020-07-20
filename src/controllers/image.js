@@ -14,10 +14,7 @@ ctrl.index = async (req, res) => {
   const image = await Image.findOne({ filename: { $regex: req.params.image_id } });
 
   if (image) {
-
-    const user = await Image.findOne({
-       filename: { $regex: req.params.image_id } });
-
+    
     // const user = await Image.findOne({
     //   $and: [{ filename: { $regex: req.params.image_id } },
     //   { usersviews: req.user.email }]
