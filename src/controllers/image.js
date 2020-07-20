@@ -14,16 +14,21 @@ ctrl.index = async (req, res) => {
   const image = await Image.findOne({ filename: { $regex: req.params.image_id } });
 
   if (image) {
+
     const user = await Image.findOne({
-      $and: [{ filename: { $regex: req.params.image_id } },
-      { usersviews: req.user.email }]
-    });
-    if (!user) {
-      //views por usuario
-      await Image.update(
-        { filename: { $regex: req.params.image_id } }, { $addToSet: { usersviews: req.user.email } })
-      image.views = image.views + 1;
-    }
+       filename: { $regex: req.params.image_id } });
+
+    // const user = await Image.findOne({
+    //   $and: [{ filename: { $regex: req.params.image_id } },
+    //   { usersviews: req.user.email }]
+    // });
+    // if (!user) {
+    //   //views por usuario
+    //   await Image.update(
+    //     { filename: { $regex: req.params.image_id } }, { $addToSet: { usersviews: req.user.email } })
+    // }
+
+    image.views = image.views + 1;
     viewModel.image = image;
     image.save();
     const comments = await Comment.find({ image_id: image._id })
