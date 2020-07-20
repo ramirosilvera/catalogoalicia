@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="/"><h3 class="encabezado">Vision Espiral</h3></a>
+        <a class="navbar-brand" href="/catalogo"><h3 class="encabezado">Catalogo Alicia</h3></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,15 +9,21 @@
             <ul class="navbar-nav ml-auto">
                 {{#if user}}
                 <li class="nav-item">
-                    <a class="nav-link" href="/users/logout">{{user.name}}: cerrar sesión.</a>
+                    <a class="nav-link" href="#">Alicia </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Subir Imagen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/logout">Salir</a>
                 </li>
                 {{else}}
                 <li class="nav-item">
-                    <a class="nav-link" href="/users/signin">Ingresar</a>
+                    <a class="nav-link" href="/users/signin">Administradora</a>
                 </li>
-                <li class="nav-item">
+                {{!-- <li class="nav-item">
                     <a class="nav-link" href="/users/signup">Registrarse</a>
-                </li>
+                </li> --}}
                 {{/if}}
             </ul>
         </div>

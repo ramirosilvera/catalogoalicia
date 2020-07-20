@@ -34,14 +34,14 @@
 </div>
 
 <div class="card mt-2">
-    <div class="card-header bg-dark text-white">
+    <div class="card-header bg-primary text-white">
         <h3><i class="far fa-images"></i> Subidas recientemente</h3>
     </div>
     <div class="card-body">
         <div class="row">
             {{#each images}}
             <div class="col-md-4">
-                <a href="/images/{{uniqueId}}">
+                <a href="#/images/{{uniqueId}}">
                     <img src="/public/upload/{{filename}}" alt="" class="w-100 h-100 img-thumbnail">
                 </a>
             </div>
